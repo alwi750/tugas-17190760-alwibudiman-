@@ -21,14 +21,12 @@ class Web extends CI_Controller{
     $this->load->view('v_footer',$data);
 
     }
-    public function tampiluser()
- {
-    $data['judul'] = "Halaman Depan";
-    $data['user'] =$this->ModelUser;getUser()->result_array();
-    $this->load->view('v_header',$data);
-    $this->load->view('v_about',$data);
-    $this->load->view('v_footer',$data);
+    public function tampilUser(){
 
-    }
-
+   $data['judul'] = "Halaman User";
+   $data['user']= $this->M_User->getUser()->result_array();
+   $this->load->view('v_header',$data);
+   $this->load->view('v_user',$data);
+   $this->load->view('v_footer',$data);
+}
 }
